@@ -17,7 +17,7 @@ def find():
 		except URLError as e:
 			continue
 		else:
-			print "OK => ",req_link
-
+			print "We found a live url==",req_link
+			print "Happy Hacking :)"
 
 find()
