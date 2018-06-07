@@ -1,7 +1,4 @@
-from urllib2 import Request
-import URLError
-import HTTPError
-import urlopen
+from urllib2 import Request,URLError,HTTPError,urlopen
 def find():
 	file = open("panel.txt","r");
 	site = raw_input("Please enter Site url: ")
