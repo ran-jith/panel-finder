@@ -8,7 +8,7 @@ def find():
 		if not s:
 			break
 		target = site.replace("http://","")#add http to the front of the website
-		final = target+site+"/"+s #combine http,input site and panel 
+		final = target+"/"+s #combine http,input site and panel 
 		test = Request(final)
 		try:
 			response = urlopen(test)
