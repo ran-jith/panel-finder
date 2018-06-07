@@ -1,23 +1,26 @@
-from urllib2 import Request,URLError,HTTPError,urlopen
-
+from urllib2 import Request
+import URLError
+import HTTPError
+import urlopen
 def find():
-	f = open("panel.txt","r");
-	link = raw_input("Please enter Site url: ")
+	file = open("panel.txt","r");
+	site = raw_input("Please enter Site url: ")
 	print "\n\nChecking links : \n"
 	while True:
-		sub_link = f.readline()
-		if not sub_link:
+		s = file.readline()
+		if not s:
 			break
-		req_link = "http://"+link+"/"+sub_link
-		req = Request(req_link)
+		target = site.replace("http://","")#add http to the front of the website
+		final = target+site+"/"+s #combine http,input site and panel 
+		test = Request(final)
 		try:
-			response = urlopen(req)
+			response = urlopen(test)
 		except HTTPError as e:
 			continue
 		except URLError as e:
 			continue
 		else:
-			print "We found a live url==",req_link
+			print "We found a live url==",final
 			print "Happy Hacking :)"
 
 find()
